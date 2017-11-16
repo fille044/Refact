@@ -1,3 +1,4 @@
+/* General defines */
 #include <math.h>
 #include <limits.h>
 
@@ -9,7 +10,6 @@ double calcOhmsLag(double r, double i)
     double u = i * r;
     return u;
 }
-
 
 
 double calcResTot(double r1, double r2, double r3)

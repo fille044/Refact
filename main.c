@@ -28,7 +28,7 @@ AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 */
 
 
-/* Defines */
+/* General defines */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -56,39 +56,8 @@ void printMenu(void)
     printf("Välj 0 för: för ATT AVSLUTA\n");
 }
 
-bool handleMenu(int val)
-{
-    switch (val) {
-        case 0:
-            return true;
-        case 1:
-            handleOhmsLag();
-            break;
-        case 2:
-            handleResTot();
-            break;
-        case 3:
-            handleEffEnk();
-            break;
-        case 4:
-            handleSkenEff();
-            break;
-        case 5:
-            handleAktivEff();
-            break;
-        case 6:
-            handleSken3Fas();
-            break;
-        case 7:
-            handleAktiv3Fas();
-            break;
-        default:
-            printf("Fel alternativ försök igen!: \n");
-            break;
-    }
-}
 
-int main()
+void main()
 {
     system("chcp 1252");
     system("cls");
@@ -97,12 +66,8 @@ int main()
     while (exit == false)
     {
         int val;
-
         printMenu();
         scanf("%d", &val);
-
         exit = handleMenu(val);
     }
-
-    return 0;
 }

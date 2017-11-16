@@ -1,8 +1,43 @@
+/* General defines */
 #include <stdio.h>
+#include <stdbool.h>
 
 /* Local libraries */
 #include "handle.h"
 #include "calc.h"
+
+
+bool handleMenu(int val)
+{
+    switch (val) {
+        case 0:
+            return true;
+        case 1:
+            handleOhmsLag();
+            break;
+        case 2:
+            handleResTot();
+            break;
+        case 3:
+            handleEffEnk();
+            break;
+        case 4:
+            handleSkenEff();
+            break;
+        case 5:
+            handleAktivEff();
+            break;
+        case 6:
+            handleSken3Fas();
+            break;
+        case 7:
+            handleAktiv3Fas();
+            break;
+        default:
+            printf("Fel alternativ försök igen!: \n");
+            break;
+    }
+}
 
 
 void handleOhmsLag(void)
