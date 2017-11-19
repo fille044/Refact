@@ -6,7 +6,6 @@ TARGET_RM=MCalc.exe
 
 run: $(C_FILES) $(H_FILES)
 	$(C_COMPILER) $(C_FILES) -o $(TARGET)
-	$(TARGET)
 
 clean:
 	-del -f $(TARGET_RM)

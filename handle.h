@@ -1,5 +1,5 @@
 /* Public functions */
-bool handleMenu(int val);
+int handleMenu(int val);
 void handleOhmsLag(void);
 void handleResTot(void);
 void handleEffEnk(void);
