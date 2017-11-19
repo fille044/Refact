@@ -11,17 +11,16 @@
 void printMenu(void)
 {
     printf("\n");
-    printf("Välj vilka storheter du vill ber�kna:\n");
-    printf("Välj 1 för: OHMS LAG\n");
-    printf("Välj 2 för: Rtot\n");
-    printf("Välj 3 för: EFFEKTLAGEN ENKEL\n");
-    printf("Välj 4 för: SKENBAR EFFEKT ENFAS\n");
-    printf("Välj 5 för: AKTIV EFFEKT/MEDELEFFEKT ENFAS\n");
-    printf("Välj 6 för: SKENBAR EFFEKT 3-FAS\n");
-    printf("Välj 7 för: AKTIV EFFEKT 3-FAS\n");
-    printf("Välj 0 för: för ATT AVSLUTA\n");
+    printf("V\xE4lj vilka storheter du vill ber�kna:\n");
+    printf("V\xE4lj 1 f\xF6r: OHMS LAG\n");
+    printf("V\xE4lj 2 f\xF6r: Rtot\n");
+    printf("V\xE4lj 3 f\xF6r: EFFEKTLAGEN ENKEL\n");
+    printf("V\xE4lj 4 f\xF6r: SKENBAR EFFEKT ENFAS\n");
+    printf("V\xE4lj 5 f\xF6r: AKTIV EFFEKT/MEDELEFFEKT ENFAS\n");
+    printf("V\xE4lj 6 f\xF6r: SKENBAR EFFEKT 3-FAS\n");
+    printf("V\xE4lj 7 f\xF6r: AKTIV EFFEKT 3-FAS\n");
+    printf("V\xE4lj 0 f\xF6r: f\xF6r ATT AVSLUTA\n");
 }
-
 
 /*    Handles choices from menu                     */
 int handleMenu(int val)
@@ -51,7 +50,7 @@ int handleMenu(int val)
             handleAktiv3Fas();
             return 0;
         default:
-            printf("Fel alternativ försök igen!: \n");
+            printf("Fel alternativ f\xF6rs\xF6k igen!: \n");
             return 0;
     }
 }
@@ -60,7 +59,7 @@ int handleMenu(int val)
 int checkOverflow(double Input, int Limit)
 {
     if (Input > Limit) {
-        printf("för högt värde, försök igen: \n");
+        printf("f\xF6r h\xF6gt v\xE4rde, f\xF6rs\xF6k igen: \n");
         return 0;
     }
     else {
@@ -71,14 +70,14 @@ int checkOverflow(double Input, int Limit)
 /*    Handles Ohms law, input and output                */
 void handleOhmsLag(void)
 {
-    printf("Ohms lag spänningen(volt/V) betäckning U lika med Resistansen(Ohm) betäckning R \n");
-    printf("gånger Strömmen(Ampere) med betäckningen I. Kort U=R*I. \n\n");
+    printf("Ohms lag sp\xE4nningen(volt/V) ben\xE4mns U lika med Resistansen(Ohm) \nben\xE4mns R ");
+    printf("g\xE5nger Str\xF6mmen(Ampere) ben\xE4mns  I. Kort U=R*I. \n\n");
     double r, i;
     printf("Skriv resistans R < 20 000ohm: \n ");
     scanf("%lf", &r);
     if (!(checkOverflow(r, 20000))) return;
 
-    printf("Skriv ström I < 440 Ampere: \n");
+    printf("Skriv str\xF6m I < 440 Ampere: \n");
     scanf("%lf", &i);
     if (!(checkOverflow(i, 440))) return;
 
@@ -88,8 +87,8 @@ void handleOhmsLag(void)
 /*    Handles total resistance, input and output        */
 void handleResTot(void)
 {
-    printf("Resistans sammankopplade i parallella kretsar är lika med 1 delat Resistans R total är lika med\n");
-    printf("Resistans 1/R1 + 1/R2 + 1/R3 då vi högst använder tre resistanser.\n\n");
+    printf("Resistans sammankopplade i parallella kretsar \xE4r lika med 1 delat Resistans R total \xE4r lika med\n");
+    printf("Resistans 1/R1 + 1/R2 + 1/R3 d\xE5 vi h\xF6gst anv\xE4nder tre resistanser.\n\n");
     double r1,r2,r3;
     printf("Skriv resistans R1 < 20 000ohm: \n ");
     scanf("%lf", &r1);
@@ -109,12 +108,12 @@ void handleResTot(void)
 /*    Handles simple effect law, input and output       */
 void handleEffEnk(void)
 {
-    printf("Effektlagen enkel för likström är effekten P i Watt (W) lika med spänningen U i volt(V)\n");
-    printf("gånger Strömmen I i Ampere(A): \n\n");
+    printf("Effektlagen enkel f\xF6r likstr\xF6m \xE4r effekten P i Watt (W) lika med sp\xE4nningen U i volt(V)\n");
+    printf("g\xE5nger Str\xF6mmen I i Ampere(A): \n\n");
     double u, i;
-    printf("Skriv spänningen U i volt(V): \n ");
+    printf("Skriv sp\xE4nningen U i volt(V): \n ");
     scanf("%lf", &u);
-    printf("Skriv ström Ampere I < 440A: \n");
+    printf("Skriv str\xF6m Ampere I < 440A: \n");
     scanf("%lf", &i);
     if (!(checkOverflow(i, 440))) return;
 
@@ -124,12 +123,12 @@ void handleEffEnk(void)
 /*    Handles apparent effect law, input and output     */
 void handleSkenEff(void)
 {
-    printf("Skenbar effekt enfas räknas med storheten VA(VoltAmpere) som är lika med spänningen U i volt(V)\n");
-    printf("gånger Strömmen I i ampere(A)\n\n");
+    printf("Skenbar effekt enfas r\xE4knas med storheten VA(VoltAmpere) som \xE4r lika med sp\xE4nningen U i volt(V)\n");
+    printf("g\xE5nger Str\xF6mmen I i ampere(A)\n\n");
     double u, i;
-    printf("Skriv spänningen U i volt: \n ");
+    printf("Skriv sp\xE4nningen U i volt: \n ");
     scanf("%lf", &u);
-    printf("Skriv ström I < 440A: \n");
+    printf("Skriv str\xF6m I < 440A: \n");
     scanf("%lf", &i);
     if (!(checkOverflow(i, 440))) return;
 
@@ -139,12 +138,12 @@ void handleSkenEff(void)
 /*    Handles active effect law, input and output     */
 void handleAktivEff(void)
 {
-    printf("Aktiv medelefdekt enfas är lika med effekt P i watt(W) lika med spänningen U i volt(V) gånger Strömmen I \n");
-    printf("i Ampere gånger cosinus fi/efkektfaktor < 1:\n\n");
+    printf("Aktiv medelefdekt enfas \xE4r lika med effekt P i watt(W) lika med sp\xE4nningen U i volt(V) g\xE5nger Str\xF6mmen I \n");
+    printf("i Ampere g\xE5nger cosinus fi/efkektfaktor < 1:\n\n");
     double u, i, cos;
-    printf("Skriv spänning U i volt: \n ");
+    printf("Skriv sp\xE4nning U i volt: \n ");
     scanf("%lf", &u);
-    printf("Skriv ström I: \n");
+    printf("Skriv str\xF6m I: \n");
     scanf("%lf", &i);
     if (!(checkOverflow(i, 440))) return;
 
@@ -152,7 +151,7 @@ void handleAktivEff(void)
     scanf("%lf", &cos);
     if (cos < 0 && cos > 1)
     {
-        printf("Fel värde, försök igen\n");
+        printf("Fel v\xE4rde, f\xF6rs\xF6k igen\n");
     }
     printf("%f W\n", calcAktivEff(u, i, cos));
 }
@@ -160,15 +159,15 @@ void handleAktivEff(void)
 /*    Handles apparent 3 phase, input and output     */
 void handleSken3Fas(void)
 {
-    printf("3-fas skenbar effekt är växelspänning är skenbar effekt S i voltampere(VA) lika med spänningen U i volt(V) \n");
-    printf("gånger Strömmen I i ampere(A) gånger roten ur 3 SQRT(3).\n\n");
+    printf("3-fas skenbar effekt \xE4r v\xE4xelsp\xE4nning \xE4r skenbar effekt S i voltampere(VA) lika med sp\xE4nningen U i volt(V) \n");
+    printf("g\xE5nger Str\xF6mmen I i ampere(A) g\xE5nger roten ur 3 SQRT(3).\n\n");
     double u, i;
-    printf("Skriv spänning U i volt(V) < 400V: \n ");
+    printf("Skriv sp\xE4nning U i volt(V) < 400V: \n ");
     scanf("%lf", &u);
     if (!(checkOverflow(u, 400))) return;
 
 
-    printf("Skriv ström I i ampere < 440: \n");
+    printf("Skriv str\xF6m I i ampere < 440: \n");
     scanf("%lf", &i);
     if (!(checkOverflow(i, 440))) return;
 
@@ -178,14 +177,14 @@ void handleSken3Fas(void)
 /*    Handles active 3 phase, input and output     */
 void handleAktiv3Fas(void)
 {
-    printf("3-fas aktiv effekt är effekten P i Watt(W) lika med spänningen U i volt(V) gånger Strömmen I i ampere(A)\n");
-    printf("gånger cos < 1 && cos > 0 gånger roten ur 3 SQRT(3).\n\n");
+    printf("3-fas aktiv effekt \xE4r effekten P i Watt(W) lika med sp\xE4nningen U i volt(V) g\xE5nger Str\xF6mmen I i ampere(A)\n");
+    printf("g\xE5nger cos < 1 && cos > 0 g\xE5nger roten ur 3 SQRT(3).\n\n");
     double u, i, cos;
-    printf("Skriv spänningen U i volt(V): \n ");
+    printf("Skriv sp\xE4nningen U i volt(V): \n ");
     scanf("%lf", &u);
     if (!(checkOverflow(u, 400))) return;
 
-    printf("Skriv ström I i ampere(A): \n");
+    printf("Skriv str\xF6m I i ampere(A): \n");
     scanf("%lf", &i);
     if (!(checkOverflow(i, 440))) return;
 
@@ -194,7 +193,7 @@ void handleAktiv3Fas(void)
     scanf("%lf", &cos);
     if (cos < 0 && cos > 1)
     {
-        printf("för högt värde, försök igen: \n");
+        printf("f\xF6r h\xF6gt v\xE4rde, f\xF6rs\xF6k igen: \n");
     }
 
     printf("%f W\n", calcAktiv3Fas(u ,i, cos));

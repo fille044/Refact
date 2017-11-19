@@ -1,4 +1,5 @@
 /* Public functions */
+void printMenu(void);
 int handleMenu(int val);
 void handleOhmsLag(void);
 void handleResTot(void);
